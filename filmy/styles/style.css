@@ -1,0 +1,141 @@
+/* Загальні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Темний фон */
+    color: #fff; /* Білий текст */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.9); /* Темний фон для заголовка */
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Тінь для заголовка */
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Структура фільму: зображення та опис */
+.movie-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px; /* Більший відступ між деталями фільму і плеєром */
+    flex-wrap: wrap; /* Адаптивність для мобільних пристроїв */
+}
+
+/* Ліва частина: фото фільму */
+.movie-image {
+    flex: 0 0 320px; /* Задаємо фіксовану ширину для зображення */
+    margin-right: 40px; /* Відступ між зображенням і описом */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Велика тінь для картинки */
+}
+
+.movie-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* М'якші кути для зображення */
+    transition: transform 0.3s ease; /* Плавна анімація при наведенні */
+}
+
+.movie-image img:hover {
+    transform: scale(1.05); /* Збільшення картинки при наведенні */
+}
+
+/* Права частина: опис фільму */
+.movie-description {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3); /* Тінь для опису */
+    transition: transform 0.3s ease; /* Плавна анімація для опису */
+}
+
+.movie-description p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.movie-description:hover {
+    transform: translateY(-10px); /* Легке підняття опису при наведенні */
+}
+
+/* Відео блок */
+.video-container {
+    text-align: center;
+    margin-top: 60px; /* Відступ до плеєра */
+}
+
+video {
+    width: 100%;
+    max-width: 900px; /* Максимальна ширина плеєра */
+    border: 3px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Тінь для плеєра */
+    transition: transform 0.3s ease; /* Плавна анімація для плеєра */
+}
+
+video:hover {
+    transform: scale(1.05); /* Збільшення плеєра при наведенні */
+}
+
+/* Кнопка для повернення нагору */
+.btn-scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.btn-scroll:hover {
+    background: #e67e22;
+    transform: scale(1.1);
+}
+
+/* Стилі для адаптивності */
+@media screen and (max-width: 768px) {
+    .movie-detail {
+        flex-direction: column; /* Перехід до вертикального розташування для мобільних */
+        align-items: center;
+    }
+
+    .movie-image {
+        margin-right: 0;
+        margin-bottom: 20px; /* Відступ знизу на мобільних */
+    }
+
+    .movie-description {
+        padding: 20px;
+    }
+
+    .btn-scroll {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+}
